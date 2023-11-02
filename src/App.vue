@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main>
+    <!-- heading -->
+    <header>
+      <h1>Pinia Tasks</h1>
+    </header>
+
+    <!-- new task form -->
+    <div class="new-task-form">
+    </div>
+
+    <!-- filter -->
+    <nav class="filter">
+    </nav>
+
+    <!-- loading -->
+
+    <!-- task list -->
+    <div class="task-list">
+      <div v-for="task in taskStore.tasks" :key="task.id">
+        {{  task.title  }}
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { useTaskStore } from "@/stores/TaskStore";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  setup() {
+    const taskStore = useTaskStore()
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    return { taskStore }
+  }
+};
+</script>
