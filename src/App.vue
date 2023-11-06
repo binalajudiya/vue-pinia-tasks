@@ -11,6 +11,8 @@
 
     <!-- filter -->
     <nav class="filter">
+      <button @click="filter = 'all'">All tasks</button>
+      <button @click="filter = 'favs'">Fav tasks</button>
     </nav>
 
     <!-- loading -->
