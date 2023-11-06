@@ -6,8 +6,7 @@
     </header>
 
     <!-- new task form -->
-    <div class="new-task-form">
-    </div>
+    <div class="new-task-form"></div>
 
     <!-- filter -->
     <nav class="filter">
@@ -20,7 +19,7 @@
     <!-- task list -->
     <div class="task-list">
       <div v-for="task in taskStore.tasks" :key="task.id">
-        {{  task.title  }}
+        {{ task.title }}
       </div>
     </div>
   </main>
@@ -31,9 +30,11 @@ import { useTaskStore } from "@/stores/TaskStore";
 
 export default {
   setup() {
-    const taskStore = useTaskStore()
+    const taskStore = useTaskStore();
 
-    return { taskStore }
-  }
+    const filter = ref("all");
+
+    return { taskStore };
+  },
 };
 </script>
