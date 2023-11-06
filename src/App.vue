@@ -18,6 +18,7 @@
 
     <!-- task list -->
     <div class="task-list">
+      <p>You have {{ taskStore.favCount }} tasks in your favs list.</p>
       <div v-for="task in taskStore.tasks" :key="task.id">
         {{ task.title }}
       </div>
