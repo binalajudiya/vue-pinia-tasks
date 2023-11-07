@@ -14,8 +14,6 @@
       <button @click="filter = 'favs'">Fav tasks</button>
     </nav>
 
-    <!-- loading -->
-
     <!-- task list -->
     <div class="task-list">
       <p>You have {{ taskStore.favCount }} tasks in your favs list.</p>
@@ -32,9 +30,7 @@ import { useTaskStore } from "@/stores/TaskStore";
 export default {
   setup() {
     const taskStore = useTaskStore();
-
     const filter = ref("all");
-
     return { taskStore };
   },
 };
